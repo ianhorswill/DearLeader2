@@ -1,0 +1,13 @@
+##
+## Definitions for the barista character
+##
+
+PrimaryCharacter evil_one.
+Interest evil_one evil.
+Interest evil_one world_domination.
+Trait evil_one superpower.
+Trait evil_one villain.
+Trait evil_one sociopath.
+Say evil_one: the Evil One
+
+WorkInteraction evil_one minion : [Setting lair_of_the_evil_one] The Evil One kills an incompetent minion.  [Beat]

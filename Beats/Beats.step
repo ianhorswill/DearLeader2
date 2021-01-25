@@ -1,0 +1,17 @@
+# [Beat]
+# States that a beat has just completed.  If we're just generating a story, this is a no-op.
+# If we're playing interactively, it will pause the game until the players finish playing out
+# the beat.
+
+# This is also used by the profiler when it's looking for what beats have been used in a given
+# playthrough.  Any task that calls Beat is considered by the profiler to be a beat.  So any
+# such task that gets called in a playthough is a beat that was used in the playthrough.
+
+Beat.  # no-op
+
+# [StoryBeat ?task]
+# ?task is a task that constitutes a story beat.
+# By convention, all story beats end by calling [Beat] so StoryBeat just checks
+# whether the task calls [Beat].
+[predicate]
+StoryBeat ?task: [TaskCalls ?task Beat] [Not [= ?task StoryBeat]]

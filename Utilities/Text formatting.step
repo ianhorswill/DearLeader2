@@ -1,0 +1,8 @@
+# [Section ?type]
+# Declare the following text is of a given section type.  If this is different from the current section type,
+# force a paragraph break.
+Section SectionType.
+Section ?type: [= SectionType Empty] [set SectionType = ?type]
+Section ?type: [Paragraph] [set SectionType = ?type]
+
+initially: [set SectionType = Empty]

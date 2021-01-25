@@ -1,0 +1,9 @@
+# [Story]
+# Generate a new story
+[randomly]
+task Story.
+
+# [PlotPoint ?task]
+# Task represents a plot point in a Story
+[main]
+predicate PlotPoint ?task.

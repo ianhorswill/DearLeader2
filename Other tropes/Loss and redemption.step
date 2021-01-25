@@ -1,0 +1,43 @@
+# [LossAndRedemptionStory ?protagonist ?other ?relationship]
+# General trope of stories about threats to the relationship between two characters
+LossAndRedemptionStory ?protagonist ?other ?relationship:
+   [Cast ?protagonist]
+   [Cast ?other]
+   [Paragraph]
+   [IntroduceRelationship ?protagonist ?other ?relationship]
+   [BreakRelationship ?protagonist ?other ?relationship]
+   [RestoreRelationship ?protagonist ?other ?relationship]
+   [LossAndRedemptionCoda ?protagonist ?other ?relationship]
+[end]
+
+PlotPoint LossAndRedemptionStory.
+
+# [IntroduceRelationship ?protagonist ?otherCharacter ?relationship]
+# Establishes the relationship between the characters as part of the story world.
+# This could mean depicting the literal establishment of the relationship, or just
+# events that establish for the audience that the relationship is there.
+[randomly]
+task IntroduceRelationship ?protagonist ?otherCharacter ?relationship.
+
+PlotPoint IntroduceRelationship.
+
+# [BreakRelationship ?protagonist ?other ?relationship]
+# Show the breaking of the bond between the two characters.
+[randomly]
+task BreakRelationship ?protagonist ?other ?relationship.
+
+PlotPoint BreakRelationship.
+
+# [RestoreRelationship ?protagonist ?other ?relationship]
+# Reestablish the bond between the characters.
+[randomly]
+task RestoreRelationship ?protagonist ?other ?relationship.
+
+PlotPoint RestoreRelationship.
+
+# [LossAndRedemptionCoda ?protagonist ?other ?relationship]
+# Depict the normalcy that has been reestablished.
+[randomly]
+task LossAndRedemptionCoda ?protagonist ?other ?relationship.
+
+PlotPoint LossAndRedemptionCoda.

@@ -1,0 +1,11 @@
+##
+## Definitions for the barista character
+##
+
+PrimaryCharacter tortured_artist.
+Interest tortured_artist art.
+Trait tortured_artist poor.
+Trait tortured_artist mercurial.
+Trait tortured_artist drunk.
+
+WorkLife tortured_artist : [Setting studio ] The tortured artist broods.

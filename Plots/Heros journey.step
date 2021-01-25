@@ -1,0 +1,71 @@
+##
+## Campbell's "Hero's Journey" structure
+##
+
+# A Hero's Journey story
+Story: [Cast ?hero] [Cast ?antagonist] [Section text] [HerosJourney ?hero ?antagonist]
+
+# [HerosJourney ?hero ?antagonist]
+# Enact a Hero's Journey story
+HerosJourney ?h ?a:
+    [IntroduceHero ?h ?]
+    [AntagonistCrossesPath ?h ?a ?]
+    [CallToQuest ?h ?a ?]
+    [Quest [DefeatAntagonist ?h ?a] 3]
+[end]
+PlotPoint HerosJourney.
+
+Subquest [DefeatHenchpeep ?H ?Hench ?A] [DefeatAntagonist ?H ?A]: [Henchpeep ?Hench ?A]
+Subquest ?S [DefeatHenchpeep ?H ?Hench ?]: [Subquest ?S [DefeatAntagonist ?H ?Hench]]
+
+# [DefeatHenchpeep ?hero ?henchpeep ?boss]
+# Enact the defeat of the henchpeep by the hero.
+DefeatHenchpeep ?H ?Hench ?_A: [DefeatAntagonist ?H ?Hench]
+PlotPoint DefeatHenchpeep.
+Finite [DefeatHenchpeep ? ?Hench ?A]: defeat ?A's Henchpeep ?Hench
+
+# [Henchpeep ?who]
+# ?who is a possible walk-on hench-person character.
+[randomly][predicate]
+Henchpeep igor ?.
+ProperName igor.
+Henchpeep flying_monkeys ?.
+Henchpeep fred_the_flying_robot ?.
+ProperName fred_the_flying_robot.
+Henchpeep steve ?.
+ProperName steve.
+Henchpeep mechagodzilla ?.
+ProperName mechagodzilla.
+Henchpeep rudy_giuliani ?.
+ProperName rudy_giuliani.
+Henchpeep flatulant_zombie ?.
+Henchpeep troll ?.
+
+# [IntroduceHero ?hero ?identity]
+# Introduce our hero
+[randomly]
+IntroduceHero ?H farmer: ?H grows up in a small farming town. [Beat]
+IntroduceHero ?H orphan: ?H is left on the steps of a monastery as a child. [Beat]
+IntroduceHero ?H city: ?H grows up in the big city but always knew they were destined for something greater. [Beat]
+PlotPoint IntroduceHero.
+
+# [AntagonistCrossesPath ?Hero ?Antagonist ?horrible_deed]
+# Introduce ?antagonist and have them do something to make ?hero really mad at them.
+[randomly]
+AntagonistCrossesPath ?H ?A destroys_home: ?A destroys the only home ?H had ever known. [Beat]
+AntagonistCrossesPath ?_H ?A tyranny: ?A begins a tyrannical rule over the land.  [Beat]
+AntagonistCrossesPath ?H ?A kills_family: ?A 's actions lead to the death of ?H's family.  [Beat]
+PlotPoint AntagonistCrossesPath.
+
+# [CallToQuest ?Hero ?Antagonist ?event]
+# Engage the hero in the quest
+CallToQuest ?H ?A revenge: ?H vows revenge against ?A.  [Beat]
+CallToQuest ?H ?A protection: for the good of the people ?H realizes they must defeat ?A.  [Beat]
+CallToQuest ?H ?_A chance_encounter: ?H runs in fear but a chance encounter makes them realize they can't run away from their problems.
+PlotPoint CallToQuest.
+
+# [DefeatAntagonist ?hero ?antagonist]
+# Enact the defeat of the antagonist.
+DefeatAntagonist ?H ?A: ?H defeats ?A. [Beat]
+PlotPoint DefeatAntagonist.
+Finite [DefeatAntagonist ? ?A]: defeat ?A

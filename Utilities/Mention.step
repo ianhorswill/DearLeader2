@@ -1,0 +1,56 @@
+# [Mention ?x]
+# Print ?x in whatever format is appropriate.
+# This call is generated automatically when ?x is used in the text.  That is,
+# "Foo ?x: you see an ?x" is short for "Foo ?x: you see an [Mention ?x]"
+Mention ?x:
+	[case ?x]
+		Var : ?x/Write [Break "Mention called with unbound variable"]
+		[else]
+		[firstOf]
+		   [Say ?x]
+		   [else]
+		   [case ?x]
+				ProperName : ?x/WriteWithoutUnderscores
+				[or]
+				Character : the ?x/WriteWithoutUnderscores
+				[or]
+				Location : the ?x/WriteWithoutUnderscores
+				[or]
+				IndefiniteArticle : a ?x/WriteWithoutUnderscores
+				[else]
+				?x/WriteWithoutUnderscores
+		   [end]
+		[end]
+	[end]
+	[NoteMention ?x]
+[end]
+
+# [Mentioned ?x]
+# The concept ?x has already been mentioned to the player(s)
+[predicate]
+Mentioned ?x: [Member ?x MentionedConcepts]
+
+# [Unmentioned ?x]
+# The concept ?x has not already been mentioned to the player(s)
+[predicate]
+Unmentioned ?x: [Not [Member ?x MentionedConcepts]]
+
+# [NoteMention ?x]
+# Mark ?x as having been mentioned to the player
+NoteMention ?x: [Mentioned ?x]
+NoteMention ?x: [add ?x MentionedConcepts]
+initially: [set MentionedConcepts = Empty]
+
+# [Say ?x]
+# Print ?x.  You can fill in methods for this to customize the printing
+# of specific concepts.
+[fallible]
+task Say ?what.
+
+# [ProperName ?x]
+# ?x is a proper name and so prints without an article.
+predicate ProperName ?x.
+
+# [IndefiniteArticle ?x]
+# ?x should be printed as "a ?x" rather than "the ?x"
+predicate IndefiniteArticle ?x.

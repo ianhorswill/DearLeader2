@@ -1,0 +1,4 @@
+# TimePasses
+# Tell the players that time has passed.
+
+TimePasses: [Paragraph] <i>Time passes ...</i> [Paragraph]

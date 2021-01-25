@@ -1,0 +1,10 @@
+##
+## Definitions for the barista character
+##
+
+PrimaryCharacter preacher.
+Interest preacher god.
+Interest preacher justice.
+Trait preacher pious.
+
+WorkInteraction preacher lost_soul: [Setting church] The preacher tends to a lost soul. [Beat]

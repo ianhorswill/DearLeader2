@@ -1,0 +1,48 @@
+##
+## Stalker story
+##
+
+# Stalker story
+Story :
+    [ContentWarning stalking]
+    [ContentWarning romance]
+    [Cast ?protagonist]
+    [Cast ?stalker]
+    [StalkerPlot ?protagonist ?stalker]
+[end]
+
+# [StalkerPlot ?protagonist ?stalker]
+# Enact a stalker plot
+StalkerPlot ?p ?s:
+   [IntroduceRelationship ?p ?s lovers]
+   [BreakRelationship ?s ?p lovers]
+   [Stalks ?s ?p 1]
+   [Stalks ?s ?p 2]
+   [Stalks ?s ?p 3]
+   [StalkerConfrontation ?p ?s]
+[end]
+PlotPoint StalkerPlot.
+
+# [StalkerConfrontation ?p ?s]
+# Enact a final confrontation between the protagonist and their stalker
+StalkerConfrontation ?p ?s:
+    [Setting [middle_of_the_night [home ?p]]]
+    [AttemptsToKill ?s ?p ?]
+    [Kills ?p ?s ?]
+[end]
+PlotPoint StalkerConfrontation.
+
+# [Stalks ?stalker ?protagonist ?intensityLevel]
+# Enact a scene in which the stalker terrorizes the protagonist.
+# Intensity level encodes how extreme the behavior is.
+[randomly]
+Stalks ?s ?p 1: [Setting [middle_of_the_night [home ?p]]] ?s texts ?p. [Beat]
+Stalks ? ?p 2: [Setting [middle_of_the_night [home ?p]]] ?p's phone rings. ?p answers it, but there's nobody there. [Beat]
+Stalks ?s ?p 3: [Setting [workplace ?p]] ?s pays an unwanted visit to ?p. [Beat]
+Stalks ? ?p 3:
+    [ContentWarning murder]
+    [Cast ?other]
+    [IntroduceRelationship ?p ?other lovers]
+    [FindBody ?p ?other]
+[end]
+PlotPoint Stalks.

@@ -1,0 +1,10 @@
+# [CastMember ?who]
+# ?who has appears in the story so far.
+[predicate]
+CastMember ?character: [PreviousCall [PrimaryCharacter ?character]]
+
+# [Cast ?role]
+# Find an unused primary character to fill ?role
+[predicate]
+Cast [NonVar ?character]: [CastMember ?character]
+Cast ?character: [Section casting] [UniqueCall [PrimaryCharacter ?character]]  Cast: ?character [FreshLine]

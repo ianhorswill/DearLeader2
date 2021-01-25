@@ -1,0 +1,65 @@
+##
+## Marriage drama story arc
+##
+
+# Marriage drama story (a kind of loss and redemption story)
+Story:
+    [ContentWarning marriage]
+    [ContentWarning infidelity]
+    [Cast ?p]
+    [Cast ?l]
+    [Paragraph]
+    [NarrateMarriageStory ?p ?l]
+    [LossAndRedemptionStory ?p ?l married]
+[end]
+
+# Introduce the story
+NarrateMarriageStory ?P ?L: ?P and ?L: a story of a marriage. [Beat]
+
+# Introduce marriage
+IntroduceRelationship ?P ?L married:
+   [MarriedLife ?P ?L ?]
+   [WorkLife ?P]
+   [MarriedLife ?P ?L ?]
+[end]
+
+# Threaten the marriage
+BreakRelationship ?P ?L married:
+    [Incompatibility ?P ?L ?I]
+    [ArgueOver ?L ?P ?I]
+    [Affair ?P ?L ?A]
+    [AffairDiscovery ?P ?L ?A]
+    [BreakUp ?P ?L]
+    [Montage [DepressionScene ?P [loss_of_person ?L]] 3]
+[end]
+
+# Heal the marriage
+RestoreRelationship ?P ?L married: [Reunite ?P ?L]
+
+# Show the marriage returned to normal
+LossAndRedemptionCoda ?P ?L married: [Callback [MarriedLife ?P ?L ?]]
+
+# [MarriedLife ?Protagonist ?Spouse ?event]
+# Show an event of life in a healthy marriage
+[randomly]
+MarriedLife ?P ?L shopping: [Setting supermarket] ?P and ?L buy groceries together. [Beat]
+MarriedLife ?P ?L morning_routine: [Setting home]?P and ?L make plans for the evening as they go about their morning ablutions.  [Beat]
+MarriedLife ?P ?L making_breakfast: [Setting home] ?P and ?L make plans for the evening as they eat their breakfast.  [Beat]
+MarriedLife ?P ?L making_breakfast: [Setting home] ?P returns home from work.  ?P and ?L talk about their days as they make dinner.  [Beat]
+MarriedLife ?P ?L going_to_bed:  [Setting home] ?P and ?L read in bed together.  [Beat]
+
+# [Affair ?protagonist ?spouse ?outside_lover]
+# Enact the protagonist becoming involved in an affair with ?outside_lover
+Affair ?P ? ?A:
+    [Cast ?A]
+    [ContentWarning infidelity]
+    [IntroduceRelationship ?P ?A lovers]
+[end]
+PlotPoint Affair.
+
+# [AffairDiscovery ?protagonist ?spouse ?outside_lover]
+# Enact ?spouse's discovery of ?protagonist's affair
+AffairDiscovery ?P ?L ?: ?L discovers lipstick on ?P's collar.  [Beat]
+AffairDiscovery ?P ?L ?: ?L discovers condoms in ?P's pocket.  [Beat]
+AffairDiscovery ?P ?L ?A: ?L discovers ?P in bed with ?A.  [Beat]
+AffairDiscovery ?P ?L ?A: ?L discovers ?P texts to ?A.  [Beat]

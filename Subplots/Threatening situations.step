@@ -1,0 +1,61 @@
+###
+### LIFE THREATENING SITUATIONS AND RescueS THEREFROM.
+###
+
+SavesLife ?saver ?savee:
+   [ThreateningSituation ?savee ?threat]
+   [IntroduceThreat ?savee ?threat]
+   [Rescue ?savee ?saver ?threat]
+[end]
+
+###
+### Mugging
+###
+
+ThreateningSituation ? mugger: [ContentWarning violent_crime]
+
+IntroduceThreat ?victim mugger: [Mugs mugger ?victim]
+Rescue ? ?saver mugger: [BeatsUp ?saver mugger]
+
+Mugs ?mugger ?victim: [Setting dark_alley] ?mugger mugs ?victim. [Beat]
+Say mugger: [Unmentioned mugger] a mugger
+Say mugger: the mugger
+IndefiniteArticle dark_alley.
+BeatsUp ?beater ?victim: [ContentWarning violence] ?beater beats up ?victim. [Beat]
+
+###
+### Medical problems
+###
+
+[randomly]
+ThreateningSituation ?p [medicalSituation ?p ?m]: [ContentWarning medical_jeopardy] [MedicalSituation ?m]
+ThreateningSituation ?p [medicalSituation ?who ?m]: [BelovedOf ?p ?who] [MedicalSituation ?m]
+
+[randomly]
+MedicalSituation car_accident.
+IndefiniteArticle car_accident.
+MedicalSituation cancer: [ContentWarning cancer]
+MedicalSituation rare_disease.
+IndefiniteArticle rare_disease.
+
+IntroduceThreat ? [medicalSituation ?who ?what]: [Not [= ?who ?what]] [LifeThreatenedBy ?who ?what]
+
+LifeThreatenedBy ?person ?medicalThreat:
+	[Setting hospital]
+    ?person 's life is threatened by ?medicalThreat.
+	[Beat]
+[end]
+
+Rescue ?rescued ?saver [medicalSituation ?who ?]:
+	[MedicalDonation ?donation]
+	#[Not [= ?rescued ?who]]
+	[Setting hospital]
+	[Gives ?saver ?who ?donation]
+	[TearfulReunion ?rescued ?saver]
+[end]
+
+[randomly]
+MedicalDonation blood.
+MedicalDonation kidney.
+IndefiniteArticle kidney.
+MedicalDonation bone_marrow.

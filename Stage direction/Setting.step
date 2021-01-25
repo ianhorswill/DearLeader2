@@ -1,0 +1,38 @@
+# Setting ?where
+# Declare that the story is now taking place in the specified location.
+# If this is different from the current setting, then generate a new
+# stage direction stating the new location.
+
+Setting CurrentSetting.
+Setting [Var ?x]: [Location ?x] [Setting ?x]
+Setting ?where:
+	[Section setting]
+	<i>Setting: ?where</i>
+	[set CurrentSetting = ?where] 
+	[Section text]
+[end]
+initially: [set CurrentSetting = nowhere]
+
+
+# Location ?where
+# States that ?where is a possible location for the narrative.
+
+[randomly] [predicate]
+Location malt_shop.
+Location starbucks.
+ProperName starbucks.
+Location cock_fight.
+Location bar.
+Location zombie_apocalypse.
+Location disco.
+Location art_opening.
+Location dmv.
+Location whole_foods.
+ProperName whole_foods.
+Location hospital.
+Location [home ?who]: [CastMember ?who]
+Say [home ?who]: ?who 's home
+Location [workplace ?who]: [CastMember ?who]
+Say [workplace ?who]: ?who 's workplace
+Location [middle_of_the_night [home ?who]]: [CastMember ?who]
+Say [middle_of_the_night ?location]: ?location, in the middle of the night

@@ -1,0 +1,24 @@
+##
+## Definitions related to walk-on characters
+##
+
+# [SecondaryCharacter ?who]
+# ?who is a walk-on character
+SecondaryCharacter ?beloved: [PrimaryCharacter ?p] [BelovedOf ?p ?beloved]
+
+# [BelovedOf ?who ?beloved]
+# ?beloved is a beloved of ?who 
+[randomly] [generator]
+predicate BelovedOf ?who ?beloved.
+
+BelovedOf ?who [mother ?who].
+Say [mother ?who]: ?who 's mother
+
+BelovedOf ?who [littleSister ?who].
+Say [littleSister ?who]: ?who 's little sister
+
+BelovedOf ?who [littleBrother ?who].
+Say [littleBrother ?who]: ?who 's little brother
+
+BelovedOf ?who [cat ?who].
+Say [cat ?who]: ?who 's cat

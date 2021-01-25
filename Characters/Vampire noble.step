@@ -1,0 +1,12 @@
+##
+## Definitions for the barista character
+##
+
+PrimaryCharacter vampire_noble.
+Interest vampire_noble blood.
+Interest vampire_noble eternal_life.
+Trait vampire_noble immortal.
+Trait vampire_noble superpower.
+Trait vampire_noble villain.
+
+WorkInteraction vampire_noble pretty_young_thing: [Setting crypt] The vampire nobel hypnotizes a pretty young thing.

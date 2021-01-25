@@ -1,0 +1,11 @@
+# [SampleBeats]
+# Make a lot of stories and count how many times each beat is used.
+[main]
+SampleBeats: [CallCounts [Story] StoryBeat 100000]
+
+HotKey b "Sample beat usage" [SampleBeats].
+
+# [UnusedBeats]
+# Make a lot of stories and check there are beats that were never generated.
+[main] 
+UnusedBeats: Checking for beats that are never used... [Paragraph] [Uncalled [Story] StoryBeat 1000] [Paragraph] done

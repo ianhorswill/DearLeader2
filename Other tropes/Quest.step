@@ -1,0 +1,61 @@
+##
+## General structure of a quest
+##
+
+# [Subquest ?subgoal ?plotpoint]
+# Achieving ?plotpoint will involve achieving the quest
+[randomly]
+predicate  Subquest ?goal ?plotPoint.
+
+# [Quest ?PlotPoint ?SubplotCount]
+# Generates narrative for achieving PlotPoint
+# using specified number of subplots
+
+Quest ?PlotPoint 0: [Call ?PlotPoint]
+Quest ?PlotPoint 1:
+    [Subquest ?S ?PlotPoint]
+    [IntroduceSubquest ?S ?PlotPoint]
+    [Quest ?S 0]
+    [Call ?PlotPoint]
+[end]
+
+Quest ?PlotPoint ?N:
+    [> ?N 1]
+    [PickSubquests ?PlotPoint ?N ?S1 ?N1 ?S2 ?N2]
+    [DoSubquest ?S1 ?N1 ?PlotPoint]
+    [DoSubquest ?S2 ?N2 ?PlotPoint]
+    [Call ?PlotPoint]
+[end]
+
+PlotPoint Quest.
+
+# [PickSubquests ?PlotPoint ?TotalSteps ?Subquest1 ?Steps1 ?Subquest2 ?Steps2]
+# Come up with 2 subquests for achieving ?PlotPoint such that they involve
+# the specified number of steps.
+PickSubquests ?PlotPoint ?N ?S1 ?N1 ?S2 ?N2:
+   [SemievenSplit ?N ?N1 ?N2]
+   [Subquest ?S1 ?PlotPoint]
+   [Subquest ?S2 ?PlotPoint]
+   [Not [= ?S1 ?S2]]
+[end]
+
+# [SemievenSplit ?Number ?Split1 ?Split]
+# Split ?Number in to ?Split1 and ?Split2, such that neither is too much larger than the other.
+[predicate]
+SemievenSplit 2 1 1.
+SemievenSplit 3 2 1.
+SemievenSplit 3 1 2.
+SemievenSplit 4 3 2.
+SemievenSplit 5 3 2.
+SemievenSplit 5 2 3.
+
+# [DoSubquest ?Subquest ?SubplotCount ?ParentPlotPoint]
+# Ennact the subquest
+DoSubquest ?Subquest ?SubplotCount ?ParentPlotPoint:
+   [IntroduceSubquest ?Subquest ?ParentPlotPoint]
+   [Quest ?Subquest ?SubplotCount]
+[end]
+
+# [IntroduceSubquest ?Subquest ?ParentQuest]
+# Add narration introducing subquest
+IntroduceSubquest ?Sub ?Super: [Paragraph] Our hero knew that to ?Super/Finite they must first ?Sub/Finite.  [Beat]

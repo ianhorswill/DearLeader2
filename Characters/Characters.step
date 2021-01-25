@@ -1,0 +1,36 @@
+# [Character ?who]
+# ?who is a character and so a potential participant in a story.
+[predicate]
+Character ?who: [PrimaryCharacter ?who]
+Character ?who: [SecondaryCharacter ?who]
+
+# [PrimaryCharacter ?who]
+# ?who is a primary character, e.g. a protagonist, primary antagonist, member of
+# an ensemble cast, love interest, etc.  A character who is involved in a lot of beats.
+[randomly]
+predicate PrimaryCharacter ?who.
+
+# [Trait ?who ?trait]
+# Character ?who has the trait of being ?trait
+[randomly]
+predicate Trait ?who ?what.
+
+# [Interest ?who ?interest]
+# Character ?who is interested in ?interest
+[randomly]
+predicate Interest ?who ?what.
+
+# [WorkLife ?who]
+# A scene involving ?who at work.
+[randomly]
+WorkLife ?who: [WorkInteraction ?who ?]
+
+# [WorkInteraction ?who ?customer]
+# A interaction at ?who's workplace with ?customer
+[randomly] [fallible]
+predicate WorkInteraction ?worker ?customer.
+
+# [SecondaryCharacter ?who]
+# A walk-on character used as a plot device for a particular plot point.
+[randomly]
+predicate SecondaryCharacter ?who.

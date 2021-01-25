@@ -1,0 +1,17 @@
+##
+## Definitions for the barista character
+##
+
+PrimaryCharacter manic_pixie_deam_peep.
+
+Interest manic_pixie_deam_peep abbaCoverBands.
+Interest manic_pixie_deam_peep ferrets.
+
+Trait manic_pixie_deam_peep eccentric.
+Trait manic_pixie_deam_peep quirky.
+
+WorkInteraction manic_pixie_deam_peep ?_customer:
+    [Setting kookyStore]
+    The manic pixie dream peep shows a very odd item to a customer.
+    [Beat]
+[end]

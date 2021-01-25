@@ -1,0 +1,16 @@
+##
+## Definitions for the barista character
+##
+
+PrimaryCharacter hot_billionaire: [ContentWarning capitalism]
+Interest hot_billionaire money.
+Interest hot_billionaire power.
+Interest hot_billionaire libertarianism.
+Trait hot_billionaire smart.
+Trait hot_billionaire sociopath.
+
+WorkLife hot_billionaire:
+    [Setting boardroom]
+    The hot billionaire makes a speech to the board of directors.
+    [Beat]
+[end]

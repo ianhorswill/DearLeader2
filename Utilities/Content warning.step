@@ -1,0 +1,24 @@
+##
+## Code for tracking content warnings
+##
+
+# [ContentWarning ?topic]
+# Fail if ?topic is in the list of unacceptable topics.
+[fallible]
+ContentWarning ?topic: [Not [Member ?topic UnacceptableContent]]
+
+# [AvoidTopic ?topic]
+# True if the topic should be avoided.
+[main] [predicate]
+AvoidTopic ?topic: [add ?topic UnacceptableContent]
+initially: [set UnacceptableContent = Empty]
+
+# [TriggerTopic ?topic]
+# True if ?topic is a trigger topic in this story.
+[predicate]
+TriggerTopic ?topic: [CompoundTask ?t] [TaskSubtask ?t [ContentWarning ?topic]] [NonVar ?topic]
+
+# [ShowTriggerTopics]
+# Print the trigger topics that occurred in this story.
+[main]
+ShowTriggerTopics: [ForEach [TriggerTopic ?t] [Write ?t]]

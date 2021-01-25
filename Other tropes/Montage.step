@@ -1,0 +1,9 @@
+# [Montage ?call ?count]
+# Run ?call ?count times, each time adding a fresh variable to its arguments,
+# and require that the values of those variables be distinct.
+
+Montage ?what 1: [UniqueCall ?what ?]
+Montage ?what 2: [UniqueCall ?what ?] [UniqueCall ?what ?]
+Montage ?what 3: [UniqueCall ?what ?] [UniqueCall ?what ?] [UniqueCall ?what ?]
+Montage ?what 4: [UniqueCall ?what ?] [UniqueCall ?what ?] [UniqueCall ?what ?] [UniqueCall ?what ?]
+Montage ?what 5: [UniqueCall ?what ?] [UniqueCall ?what ?] [UniqueCall ?what ?] [UniqueCall ?what ?] [UniqueCall ?what ?]

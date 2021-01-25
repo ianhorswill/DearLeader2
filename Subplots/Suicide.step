@@ -1,0 +1,23 @@
+[fallible]
+AttemptSuicide ?who ?how:
+    [ContentWarning suicide]
+    [SuicideMethod ?how]
+    [Setting [home ?who]]
+    ?who attempts suicide using ?how.
+    [Beat]
+[end]
+
+PreventSuicide ?preventer ?saved: ?preventer prevents ?saved from committing suicide. [Beat]
+
+# CommitSuicide ?who ?how: [SuicideMethod ?how] [Setting [home ?who]] ?who commits suicide using ?how. [Beat]
+
+[randomly]
+SuicideMethod hanging.
+SuicideMethod gun.
+[generator]
+IndefiniteArticle gun.
+SuicideMethod electrocution.
+SuicideMethod poison.
+SuicideMethod sleeping_pills.
+SuicideMethod bomb.
+IndefiniteArticle bomb.

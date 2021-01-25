@@ -1,0 +1,17 @@
+##
+## Definitions for the barista character
+##
+
+PrimaryCharacter barista.
+
+Interest barista arcade_fire.
+Interest barista coffee.
+Interest barista tamping.
+Trait barista poor.
+Trait barista hipster.
+
+WorkInteraction barista ?_customer:
+    [Setting coffeehouse]
+    The barista makes an esspresso drink for a customer.
+    [Beat]
+[end]

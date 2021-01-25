@@ -1,0 +1,11 @@
+Kills ?killer ?victim ?instrument: [MurderWeapon ?instrument] ?killer kills ?victim with ?instrument. [Beat]
+AttemptsToKill ?killer ?victim ?instrument: [MurderWeapon ?instrument] ?killer tries to ?victim with ?instrument. [Beat]
+
+[randomly]
+MurderWeapon gun.
+MurderWeapon knife.
+MurderWeapon nunchucks.
+MurderWeapon bare_hands.
+MurderWeapon hammer.
+
+FindBody ?finder ?victim: ?finder finds the body of ?victim. [Beat]
