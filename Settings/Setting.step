@@ -8,11 +8,20 @@ Setting [Var ?x]: [Location ?x] [Setting ?x]
 Setting ?where:
 	[Section setting]
 	<i>Setting: ?where</i>
-	[set CurrentSetting = ?where] 
+	[set CurrentSetting = ?where]
+	[SettingBackground ?where ?image]
+	[ShowImage ?image]
+	[SettingBGM ?where ?sound]
+	[PlaySoundLoop ?sound]
 	[Section text]
 [end]
 initially: [set CurrentSetting = nowhere]
 
+SettingBackground ?setting ?file: [ImageHere ?setting ?file]
+SettingBackground ? nothing.
+
+SettingBGM ?setting ?sound: [SoundHere ?setting ?sound]
+SettingBGM ? nothing.
 
 # Location ?where
 # States that ?where is a possible location for the narrative.
