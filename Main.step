@@ -5,3 +5,9 @@ Description: This is a reimplementation of <i>Dear Leader's Happy Story Time</i>
 # The user pressed Alt-?key.  Do whatever is appropriate
 HotKey s "Make a new story" [Story].
 HotKey t "Test the system by making a million stories" [Test [Story] 1000000].
+HotKey p "Play the game" [Play].
+
+fluent Interactive.
+
+[main]
+Play: [now [Interactive]] [Story] [Paragraph] The end
