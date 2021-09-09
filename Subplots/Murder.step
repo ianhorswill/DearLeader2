@@ -1,5 +1,5 @@
-Kills ?killer ?victim ?instrument: [MurderWeapon ?instrument] ?killer kills ?victim with ?instrument. [Beat]
-AttemptsToKill ?killer ?victim ?instrument: [MurderWeapon ?instrument] ?killer tries to ?victim with ?instrument. [Beat]
+Kills ?killer ?victim (MurderWeapon ?instrument): ?killer kills ?victim with ?instrument. [Beat]
+AttemptsToKill ?killer ?victim (MurderWeapon ?instrument): ?killer tries to ?victim with ?instrument. [Beat]
 
 [randomly]
 MurderWeapon gun.

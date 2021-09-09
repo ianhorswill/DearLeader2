@@ -7,6 +7,11 @@ HotKey s "Make a new story" [Story].
 HotKey t "Test the system by making a million stories" [Test [Story] 1000000].
 HotKey p "Play the game" [Play].
 
+Button "Play" [Play].
+Button "Story" [Story].
+#Button "Stress Test" [Test [Story] 1000000].
+Button "Beats" [SampleBeats].
+
 fluent Interactive.
 
 [main]

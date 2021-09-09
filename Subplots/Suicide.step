@@ -9,7 +9,7 @@ AttemptSuicide ?who ?how:
 
 PreventSuicide ?preventer ?saved: ?preventer prevents ?saved from committing suicide. [Beat]
 
-# CommitSuicide ?who ?how: [SuicideMethod ?how] [Setting [home ?who]] ?who commits suicide using ?how. [Beat]
+# CommitSuicide ?who (SuicideMethod ?how): [Setting [home ?who]] ?who commits suicide using ?how. [Beat]
 
 [randomly]
 SuicideMethod hanging.

@@ -6,5 +6,5 @@ CastMember ?character: [PreviousCall [PrimaryCharacter ?character]]
 # [Cast ?role]
 # Find an unused primary character to fill ?role
 [predicate]
-Cast [NonVar ?character]: [CastMember ?character]
+Cast (NonVar ?character): [CastMember ?character]
 Cast ?character: [Section casting] [UniqueCall [PrimaryCharacter ?character]]  Cast: ?character [FreshLine]

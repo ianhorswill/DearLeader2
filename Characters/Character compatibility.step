@@ -21,7 +21,7 @@ Say [sharedInterest ?what]: their shared interest in ?what/Write
 Incompatibility ?a ?b [unsharedInterest2 ?i]: [Interest ?a ?i] [Not [Interest ?b ?i]]
 Incompatibility ?a ?b [unsharedInterest1 ?i]: [Not [Interest ?a ?i]] [Interest ?b ?i]
 Incompatibility ?a ?b [incompatibleTraits ?a ?b ?ta ?tb]: [Trait ?a ?ta] [Trait ?b ?tb]
-Incompatibility ? ? [GenericIncompatibility ?g].
+Incompatibility ? ? (GenericIncompatibility ?_i).
 
 Say [unsharedInterest1 ?i]: their lack of interest in ?i/Write
 Say [unsharedInterest2 ?i]: their annoying obsession with ?i/Write

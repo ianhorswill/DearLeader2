@@ -10,15 +10,15 @@ Mention ?x:
 		   [Say ?x]
 		   [else]
 		   [case ?x]
-				ProperName : ?x/WriteWithoutUnderscores
+				ProperName : ?x/Write
 				[or]
-				Character : the ?x/WriteWithoutUnderscores
+				Character : the ?x/Write
 				[or]
-				Location : the ?x/WriteWithoutUnderscores
+				Location : the ?x/Write
 				[or]
-				IndefiniteArticle : a ?x/WriteWithoutUnderscores
+				IndefiniteArticle : a ?x/Write
 				[else]
-				?x/WriteWithoutUnderscores
+				?x/Write
 		   [end]
 		[end]
 	[end]

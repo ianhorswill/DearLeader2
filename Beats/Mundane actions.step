@@ -9,7 +9,6 @@ Gives ?giver ?recipient ?item: ?giver gives ?item to ?recipient.  [Beat]
 # [Meet ?a ?b ?where]
 # Two characters meet (for the first time)
 Meet ?a ?b ?location:
-    [Location ?location]
     [Setting ?location]
     ?a meets ?b.
     [Beat]

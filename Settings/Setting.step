@@ -17,8 +17,6 @@ Setting ?where:
 [end]
 initially: [set CurrentSetting = nowhere]
 
-OverflowTest: [OverflowTest]
-
 SettingBackground ?setting ?file: [ImageHere ?setting ?file]
 SettingBackground ? nothing.
 
