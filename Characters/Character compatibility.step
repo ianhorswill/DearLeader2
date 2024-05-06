@@ -18,8 +18,8 @@ Say [sharedInterest ?what]: their shared interest in ?what/Write
 # [Incompatability ?who1 ?who2 ?reason]
 # ?reason is a reason for ?who1 and ?who2 to be in conflict
 [randomly]
-Incompatibility ?a ?b [unsharedInterest2 ?i]: [Interest ?a ?i] [Not [Interest ?b ?i]]
-Incompatibility ?a ?b [unsharedInterest1 ?i]: [Not [Interest ?a ?i]] [Interest ?b ?i]
+Incompatibility ?a ?b [unsharedInterest2 ?i]: [Interest ?a ?i] [NotAny [Interest ?b ?i]]
+Incompatibility ?a ?b [unsharedInterest1 ?i]: [NotAny [Interest ?a ?i]] [Interest ?b ?i]
 Incompatibility ?a ?b [incompatibleTraits ?a ?b ?ta ?tb]: [Trait ?a ?ta] [Trait ?b ?tb]
 Incompatibility ? ? (GenericIncompatibility ?_i).
 

@@ -1,7 +1,7 @@
 # [SampleBeats]
 # Make a lot of stories and count how many times each beat is used.
 [main]
-SampleBeats: [CallCounts [Story] StoryBeat 1000]
+SampleBeats: [CallCounts [Story] StoryBeat 100000]
 
 HotKey b "Sample beat usage" [SampleBeats].
 
